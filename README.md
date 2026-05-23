@@ -25,8 +25,8 @@ Grocery retailers lose billions annually to perishable spoilage and end-of-shelf
 ## Setup
 
 ```bash
-git clone <repository-url>
-cd freshflow
+git clone https://github.com/PatelKishan2002/Freshflow-Forecasting-System.git
+cd Freshflow-Forecasting-System
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 cp .env.example .env        # Add Kaggle credentials and DATA_DIR
