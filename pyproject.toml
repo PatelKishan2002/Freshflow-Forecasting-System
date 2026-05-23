@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "freshflow"
 version = "0.1.0"
-description = "Perishable waste forecasting and markdown optimization for grocery retailers"
+description = "Freshflow Forecasting System — perishable waste forecasting and markdown optimization for grocery retailers"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"

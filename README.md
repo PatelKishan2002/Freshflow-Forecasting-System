@@ -1,4 +1,4 @@
-# Freshflow
+# Freshflow Forecasting System
 
 Perishable waste forecasting and markdown optimization for grocery retailers.
 
