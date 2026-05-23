@@ -1,6 +1,6 @@
-# Raw data (local only)
+# Raw data
 
-Place downloaded files here. These paths are **not** stored in git (too large for GitHub; Open Food Facts alone is ~1.2 GB).
+Downloaded source files for this project. Large files (>100 MB) are stored with **Git LFS** — after cloning, run `git lfs pull` to download them.
 
 | Subfolder | Files |
 |-----------|--------|
