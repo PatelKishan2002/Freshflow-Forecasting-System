@@ -1,0 +1,29 @@
+# Freshflow project configuration
+# All paths are relative to project root unless overridden by DATA_DIR in .env
+
+paths:
+  data_dir: ${DATA_DIR:-./data}
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  external: data/external
+  reports_figures: reports/figures
+
+dunnhumby:
+  perishable_departments:
+    - PRODUCE
+    - MEAT
+    - DELI
+    - FLORAL
+    - BAKERY
+    - DAIRY
+
+modeling:
+  forecast_horizon_days: 14
+  lookback_window_days: 90
+
+shelf_life_days:
+  DAIRY: 10
+  MEAT: 5
+  PRODUCE: 6
+  BAKERY: 3
