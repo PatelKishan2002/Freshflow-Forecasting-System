@@ -1,11 +1,23 @@
 # Data files are excluded from git — see README for how to obtain them.
 
-# Data directories
-data/raw/
-data/interim/
-data/processed/
+# Data directories — track folder layout via .gitkeep; never commit raw downloads
+data/raw/**
+!data/raw/**/
+!data/raw/**/.gitkeep
+!data/raw/README.md
+
+data/interim/**
+!data/interim/**/
+!data/interim/**/.gitkeep
+
+data/processed/**
+!data/processed/**/
+!data/processed/**/.gitkeep
+
 *.csv
 *.parquet
+*.pdf
+*.gz
 
 # Environment and secrets
 .env
