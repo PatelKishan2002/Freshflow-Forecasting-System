@@ -1,26 +1,49 @@
-# Freshflow Forecasting System
+# FreshFlow — Perishable Waste & Markdown Intelligence
 
-Perishable waste forecasting and markdown optimization for grocery retailers.
+**A demand forecasting and decision-support system for grocery perishables, addressing the gap between sales prediction and operational waste reduction.**
 
-## Problem statement
+Grocery retailers in Canada throw away an estimated $X billion of perishable food annually before it reaches a customer. Most demand forecasting work stops at "how many units will sell"; this project extends forecasting into a waste-aware decision layer that recommends when and how to mark down inventory to minimize spoilage while preserving margin.
 
-Grocery retailers lose billions annually to perishable spoilage and end-of-shelf markdowns. Freshflow combines transaction-level demand signals with category shelf-life assumptions and Canadian market calibration to forecast waste risk and inform markdown timing—reducing shrink while protecting margin on high-turnover departments.
+## What this project does
+
+- Forecasts demand for perishable categories (produce, dairy, meat, bakery) at SKU level using LightGBM and hierarchical reconciliation
+- Simulates inventory flow and predicts category-level waste in dollars
+- Recommends markdown timing and depth based on cost-aware optimization
+- Serves predictions via a FastAPI backend with a Streamlit dashboard for non-technical users
+- Deployed on Google Cloud Run
+
+## Why this project exists
+
+I work in receiving at a Canadian food distribution center. Every shift I see perishables move through the dock — produce, dairy, meat, deli. I see what arrives that the store will not sell in time. FreshFlow is my attempt to test whether Applied Data Science can model that waste, predict it, and recommend interventions — bridging operational ground-truth and analytical method.
 
 ## Data sources
 
-| Source | What it provides | License | How to obtain |
-|--------|------------------|---------|---------------|
-| **dunnhumby Complete Journey** | Real US grocery transactions (baskets, products, departments) | [dunnhumby terms](https://www.dunnhumby.com/source-files/) | Kaggle: [Complete Journey](https://www.kaggle.com/datasets/frtgn/complete-journey) — set `KAGGLE_USERNAME` and `KAGGLE_KEY` in `.env` |
-| **Statistics Canada** | Retail trade volumes, food CPI (Canadian macro calibration) | Open Government Licence – Canada | [StatCan tables](https://www150.statcan.gc.ca/) — download CSVs into `data/raw/statcan/` |
-| **Open Food Facts** | Product attributes for Canadian SKUs (categories, labels) | [ODbL 1.0](https://opendatacommons.org/licenses/odbl/) | [world.openfoodfacts.org](https://world.openfoodfacts.org/) — export or API into `data/raw/openfoodfacts/` |
-| **Canadian food waste reports** | National/contextual waste benchmarks (reference only) | Government of Canada publications | PDFs in `data/raw/canada_food_waste_reports/` (not used in modeling pipeline) |
+| Source | Role in project | License |
+|---|---|---|
+| dunnhumby Complete Journey | Real grocery transactions (modeling layer) | Open for research |
+| Statistics Canada Table 20-10-0056 | Canadian retail trade calibration | Open Government License |
+| Statistics Canada Table 18-10-0004 | Canadian food CPI for price adjustment | Open Government License |
+| Open Food Facts | Product attributes and category enrichment | Open Database License |
+| ECCC "Taking Stock" + VCMI Avoidable Crisis 2024 | Canadian food waste benchmarks for impact extrapolation | Public reports |
 
-### Data architecture (read this)
+### Obtaining raw data
 
-- **dunnhumby** is the **modeling layer**: real SKU- and basket-level US grocery transactions drive demand, waste, and markdown models.
-- **Statistics Canada** provides **Canadian calibration** (macro retail and CPI trends), not SKU-level sales—no Canadian grocer publishes open transaction data at this granularity.
-- **Open Food Facts** enriches product metadata where available; coverage for Canadian SKUs is incomplete.
-- We are **transparent** about geography: models are trained on US transaction patterns and calibrated with Canadian macro indicators; results are illustrative for Canadian retail strategy, not a substitute for proprietary store data.
+Raw files are not in git (size and license). Place downloads under `data/raw/`:
+
+| Source | How to obtain |
+|--------|----------------|
+| **dunnhumby** | [Kaggle: Complete Journey](https://www.kaggle.com/datasets/frtgn/complete-journey) — set `KAGGLE_USERNAME` and `KAGGLE_KEY` in `.env` |
+| **Statistics Canada** | [StatCan tables](https://www150.statcan.gc.ca/) → `data/raw/statcan/` |
+| **Open Food Facts** | [world.openfoodfacts.org](https://world.openfoodfacts.org/) → `data/raw/openfoodfacts/` |
+| **Food waste reports** | Government PDFs → `data/raw/canada_food_waste_reports/` |
+
+Run `notebooks/01_exploration/00_data_audit.ipynb` to validate schemas after download.
+
+## Honest limitations
+
+- No Canadian retailer publishes SKU-level transactions publicly, so the modeling layer uses US grocery data (dunnhumby) with Canadian context as a calibration overlay
+- Waste is simulated from shelf-life assumptions, not measured directly — real waste data is proprietary to retailers
+- This is a portfolio demonstration of methodology, not a production system; companies like Shelf Engine and Afresh have built commercial solutions in this space
 
 ## Setup
 
@@ -107,15 +130,7 @@ make test    # Run tests once implemented
 
 ## Results
 
-<!-- Placeholder: add key metrics, charts, and business impact after modeling -->
-
 _TBD — forecast accuracy, waste reduction estimates, and markdown ROI will be documented here._
-
-## Limitations and caveats
-
-<!-- Placeholder: document geographic mismatch, shelf-life assumptions, data sparsity -->
-
-_TBD — including US-trained models with Canadian calibration, assumed shelf lives by department, and lack of proprietary inventory/shrink data._
 
 ## License
 

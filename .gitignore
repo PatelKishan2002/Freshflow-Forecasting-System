@@ -1,23 +1,14 @@
 # Data files are excluded from git — see README for how to obtain them.
 
-# Data directories — track folder layout via .gitkeep; never commit raw downloads
-data/raw/**
-!data/raw/**/
-!data/raw/**/.gitkeep
-!data/raw/README.md
+# Processed pipelines only — raw downloads in data/raw/ are committed (large files use Git LFS)
+data/interim/*
+!data/interim/.gitkeep
 
-data/interim/**
-!data/interim/**/
-!data/interim/**/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
 
-data/processed/**
-!data/processed/**/
-!data/processed/**/.gitkeep
-
-*.csv
+# Stray exports outside data/raw (keep repo clean)
 *.parquet
-*.pdf
-*.gz
 
 # Environment and secrets
 .env
