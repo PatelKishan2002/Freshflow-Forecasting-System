@@ -39,6 +39,24 @@ Raw files are not in git (size and license). Place downloads under `data/raw/`:
 
 Run `notebooks/01_exploration/00_data_audit.ipynb` to validate schemas after download.
 
+### Canadian perishable product counts (Open Food Facts)
+
+For README context — keyword matches on `categories_en` in the Canadian OFF extract (`notebooks/01_exploration/02_openfoodfacts_canada.ipynb`):
+
+| Category | Count |
+|---|---|
+| DAIRY | 3,640 |
+| PRODUCE | 2,412 |
+| MEAT | 2,062 |
+| BAKERY | 1,673 |
+| DELI | 810 |
+| SEAFOOD | 568 |
+| **Sum of keyword matches** | **11,165** |
+
+The sum is **not** a unique-SKU total — one product can match several categories. **28,752** Canadian products (name + category + barcode) are catalogued in `data/interim/openfoodfacts_canada.parquet`.
+
+These counts are **not** model inputs. They are descriptive context that the project engages real Canadian retail categories alongside US transaction data.
+
 ## Honest limitations
 
 - No Canadian retailer publishes SKU-level transactions publicly, so the modeling layer uses US grocery data (dunnhumby) with Canadian context as a calibration overlay

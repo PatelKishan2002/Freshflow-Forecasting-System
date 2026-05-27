@@ -1,0 +1,65 @@
+CANADIAN FOOD WASTE — KEY REFERENCE NUMBERS
+============================================
+
+Source 1: ECCC "Taking Stock" (Government of Canada)
+URL: https://www.canada.ca/en/environment-climate-change/services/managing-reducing-waste/food-loss-waste/taking-stock.html
+Report: Taking Stock Report EN Final.pdf (published June 2019)
+
+Key numbers:
+- Total Canadian food waste: 35.5 million tonnes annually
+  (VCMI 2019 headline total; ECCC Taking Stock cites VCMI 2019 throughout.
+  Revised 2019 methodology in VCMI 2024 update: 26.39 million tonnes total FW.)
+- Estimated dollar value: $49 billion annually
+  (VCMI 2019 avoidable edible waste value; $49.46B in VCMI 2024 technical update.
+  Not printed as a dollar figure in the Taking Stock PDF body — from cited VCMI source.)
+- Avoidable share: 20%
+  (11 million tonnes of food produced annually becomes avoidable food loss or waste —
+  stated explicitly in Taking Stock foreword / canada.ca page.)
+- Year covered: 2019
+
+Source 2: VCMI / Second Harvest "Avoidable Crisis of Food Waste" (2024 Update)
+URL: https://secondharvest.ca/resources/research/avoidable-crisis-update
+  (also: www.SecondHarvest.ca/Research)
+Reports: Avoidable Crisis of Food Waste - Roadmap.pdf (2024)
+         Avoidable Crisis of Food Waste - Technical Report.pdf (2024)
+
+Key numbers:
+- Total avoidable food waste in Canada: 8.83 million tonnes annually
+  (potentially edible / avoidable FW; 41.7% of 21.18 million tonnes total FW)
+- Total dollar value of avoidable waste: $58 billion annually
+  ($58.07 billion per Table 3-6, CPI-based; up from $49 billion in 2019)
+- Retail share of avoidable waste: 13%
+  (1.14 million tonnes at retail; 5% of total FW by stage)
+- Year data covers: 2024
+  (comparison baseline: 2019 VCMI / Second Harvest study)
+
+Supplementary 2024 totals (for context):
+- Total food loss & waste (all types): 21.18 million tonnes (46.5% of food system inputs)
+- Unavoidable FW: 12.35 million tonnes (58.3% of total FW)
+
+Category-level breakdowns (% of avoidable FW by weight, Table 3-6, 2024):
+- Produce / fresh fruits & vegetables: 38.4%
+  (3.39 million tonnes — fresh and processed fruits & vegetables)
+- Dairy: 14.6%
+  (1.29 million tonnes)
+- Meat: 4.3%
+  (0.38 million tonnes meat & poultry)
+- Bakery: not reported as a standalone category
+  (bread/bakery grouped under Field Crops, 38.5% / 3.40 Mt — includes grains, soy, bakery)
+- Seafood: 0.8%
+  (0.07 million tonnes marine)
+
+Category notes (2024):
+- Field Crops (incl. bread, bakery, soy): 38.5% of avoidable FW by weight — largest category
+- Sugars: 3.2% | Eggs: 0.3%
+- For BBD-driven avoidable waste only: bread & baked goods 45.5%, dairy 32.5%, produce 12.2%
+  (not the same as share of all avoidable waste)
+
+Notes:
+- VCMI Avoidable Crisis is the most cited Canadian food waste reference
+- Used in academic, government, and industry publications
+- These numbers go into README "Impact extrapolation" section
+- ECCC Taking Stock (2019) summarizes policy context and foregrounds 11 Mt / 20% avoidable;
+  dollar and full-chain tonne totals come from the VCMI 2019 study it references
+- 2024 study: avoidable volume rose (8.29 → 8.83 Mt) while total FW fell (26.39 → 21.18 Mt)
+- Retail extrapolation for FreshFlow: use 1.14 Mt retail avoidable or 13% of 8.83 Mt avoidable
